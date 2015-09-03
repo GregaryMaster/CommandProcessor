@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Cubike</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_map">Карта</string>
+    <string name="action_list">Список</string>
+    <string name="action_update">Update</string>
+    <string name="title_activity_track">TrackActivity</string>
+
+    <!-- Labels for View Pager -->
+    <string name="view_pager_title_map">Карта</string>
+    <string name="view_pager_title_list">Список</string>
+
+    <string name="desc">index</string>
+    <string name="logo_desc">logo_desc</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_map">Таганрог Раневской</string>
+    <string name="title_activity_places">PlacesActivity</string>
+</resources>
