@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import com.example.mikhail.commandprocessorpattern.R;
 import com.example.mikhail.commandprocessorpattern.adapters.TrackAdapter;
-import com.example.mikhail.commandprocessorpattern.handlers.MessageController;
+import com.example.mikhail.commandprocessorpattern.executor.MessageController;
 import com.example.mikhail.commandprocessorpattern.helpers.Constants;
 import com.example.mikhail.commandprocessorpattern.helpers.States;
 import com.example.mikhail.commandprocessorpattern.interfaces.UpdateCallbackListener;
@@ -48,9 +48,9 @@ public class MainActivity extends FragmentActivity implements UpdateCallbackList
         // It is necessary for updating current activity when request completed
         controller_.init(this);
         // Create tracks request
-        TracksRequest tracksRequest = new TracksRequest(controller_);
+        TracksRequest tracksRequest = new TracksRequest();
         // Send request
-        controller_.sendMessage(controller_.obtainMessage(States.INIT_REQUEST,tracksRequest));
+        controller_.sendMessage(controller_.obtainMessage(States.INIT_REQUEST, tracksRequest));
 
         listView_.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

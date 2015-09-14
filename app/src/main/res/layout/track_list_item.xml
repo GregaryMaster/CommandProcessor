@@ -24,8 +24,7 @@
         <TextView
             android:id="@+id/track_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Таганрог Раневской"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/track_description"
@@ -42,14 +41,12 @@
         <TextView
             android:id="@+id/track_length"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="15 км"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/track_duration"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2 ч"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

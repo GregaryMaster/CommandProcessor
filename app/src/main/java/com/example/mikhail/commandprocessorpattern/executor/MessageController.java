@@ -1,18 +1,12 @@
-package com.example.mikhail.commandprocessorpattern.handlers;
+package com.example.mikhail.commandprocessorpattern.executor;
 
-import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
 import com.example.mikhail.commandprocessorpattern.helpers.States;
 import com.example.mikhail.commandprocessorpattern.interfaces.UpdateCallbackListener;
-import com.example.mikhail.commandprocessorpattern.managers.RequestProcessor;
-import com.example.mikhail.commandprocessorpattern.model.Place;
 import com.example.mikhail.commandprocessorpattern.model.Result;
-import com.example.mikhail.commandprocessorpattern.model.Track;
 import com.example.mikhail.commandprocessorpattern.requests.CommonRequest;
-import com.example.mikhail.commandprocessorpattern.requests.TracksRequest;
 
 import java.util.List;
 
@@ -40,7 +34,7 @@ public class MessageController extends Handler {
         switch (msg.what) {
             case States.INIT_REQUEST:
                 CommonRequest request = (CommonRequest)msg.obj;
-                processor_.execute(request);
+                processor_.execute(this,request);
                 break;
 
             case States.REQUEST_COMPLETED:

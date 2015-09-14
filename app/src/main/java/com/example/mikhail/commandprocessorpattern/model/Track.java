@@ -35,6 +35,11 @@ public class Track implements Result{
 
     }
 
+    public Track(String title, String description) {
+        this.title_ = title;
+        this.description_ = description;
+    }
+
     public int getTrackId() {
         return trackId_;
     }
