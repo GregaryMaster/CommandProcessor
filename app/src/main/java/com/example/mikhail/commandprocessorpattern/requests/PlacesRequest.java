@@ -3,6 +3,7 @@ package com.example.mikhail.commandprocessorpattern.requests;
 import com.example.mikhail.commandprocessorpattern.executor.MessageController;
 import com.example.mikhail.commandprocessorpattern.helpers.States;
 import com.example.mikhail.commandprocessorpattern.model.Place;
+import com.example.mikhail.commandprocessorpattern.model.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,15 @@ public class PlacesRequest extends CommonRequest {
         id_ = id;
     }
 
-    public int  getDataRequest(){
+    public int getDataRequest(){
         return this.id_;
     }
 
+    public List<Result> parseRequest() {
+        // Let's imagine we have parsed json
+        List<Result> results = new ArrayList<>();
+        Result fakePlace = new Place("Place", "description");
+        results.add(fakePlace);
+        return results;
+    }
 }

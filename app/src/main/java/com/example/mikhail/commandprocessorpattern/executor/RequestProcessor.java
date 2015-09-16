@@ -32,14 +32,7 @@ public class RequestProcessor {
                 try {
                     request.getDataRequest();
                     Thread.sleep(5000);
-                    List<Result> results = new ArrayList<>();
-                    if (request instanceof PlacesRequest) {
-                        Result fakePlace = new Place("Place", "description");
-                        results.add(fakePlace);
-                    } else if (request instanceof TracksRequest) {
-                        Result fakeTrack = new Track("Track", "description");
-                        results.add(fakeTrack);
-                    }
+                    List<Result> results = SimulateHttpRequest(request);
                     controller.sendMessage(controller.obtainMessage(States.REQUEST_COMPLETED, results));
                 } catch (Exception e) {
                 }
@@ -50,5 +43,10 @@ public class RequestProcessor {
 
     public void updateActivity(List<? extends Result> results) {
         clientActivity_.onUpdate(results);
+    }
+
+    private List<Result> SimulateHttpRequest(CommonRequest request) {
+        List<Result> results = request.parseRequest();
+        return results;
     }
 }
